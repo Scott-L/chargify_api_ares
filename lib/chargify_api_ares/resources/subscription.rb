@@ -94,6 +94,12 @@ module Chargify
       end
     end
 
+    def retry
+      process_capturing_errors do
+        put :retry, format: :json
+      end
+    end
+
     def reset_balance
       process_capturing_errors do
         put :reset_balance
